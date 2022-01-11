@@ -22,12 +22,13 @@ export class PostgresEmbeddedServer {
     constructor() {
         this.onExitShutdown.bind(this)
         this.dbDir = path.join(os.tmpdir(), `postgres_embedded_${version}_${randomInt(1000000, 9999999)}`)
-        this.serverPath = path.join(RootPath.path, "servers", process.platform, version)
+        this.serverPath = path.join(RootPath.path, ".servers", process.platform, version)
         let theOsType: string = this.osType
         if (theOsType == "win32") {
             theOsType = "windows"
         }
-        this.serverPackageFile = path.join(RootPath.path, "scripts", "target", `postgresql-${version}-${theOsType}-x86_64.txz`)
+        // this.serverPackageFile = path.join(RootPath.path, "scripts", "target", `postgresql-${version}-${theOsType}-x86_64.txz`)
+        this.serverPackageFile = path.join(__dirname, "..", "scripts", "target", `postgresql-${version}-${theOsType}-x86_64.txz`)
         this.isStarted = false
 
         switch (this.osType) {

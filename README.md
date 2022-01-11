@@ -20,21 +20,21 @@ previous database is lost.
 ## Installation
 
 ```commandline
-npm install 
+npm install postgres-embedded-node
 ```
 
 ## Usage
 ```Typescript
+import {PostgresEmbeddedServer} from "postgres-embedded-node"
+
 const pge = new PostgresEmbeddedServer()
-// ...
 pge.start()
-// ...
 console.log(pge.isRunning())  // true
-// ...
+// connect, create schemas, ...
 pge.stop()
 ```
 
-After that, a Postgresql server instance
+The Postgresql server instance
 will be running at:
 
 * host: localhost
@@ -47,7 +47,8 @@ Each time a new instance is launched,
 the database is recreated in a `$TMP`
 subdirectory.
 
-Connect to it as usual
+Connect to the database as usual.
+
 
 ## Known issues
 

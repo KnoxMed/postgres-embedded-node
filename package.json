@@ -1,22 +1,33 @@
 {
   "name": "postgres-embedded-node",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "Embedded Postgresql Server for testing or to be used embedded in a NodeJS project.",
   "scripts": {
     "test": "mocha --exit --timeout 60000 -r ts-node/register -r source-map-support/register --recursive test/**/*.test.ts",
     "test-nyc": "nyc mocha --exit --timeout 60000 -r ts-node/register -r source-map-support/register --recursive test/**/*.test.ts",
     "start": "tsc && node dist/app.js"
   },
-  "keywords": [],
-  "author": "Pablo Alcaraz",
+  "main": "dist/postgres.embedded.server.js",
+  "types": "types/postgres.embedded.server.d.ts",
+  "keywords": [
+    "postgresql",
+    "embedded",
+    "nodejs"
+  ],
+  "author": "Pablo Alcaraz <pablo98@gmail.com>",
   "contributors": [
     {
       "name": "Pablo Alcaraz",
       "email": "pablo98@gmail.com"
     }
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pabloa/postgres-embedded-node.git"
+  },
+  "homepage": "https://github.com/pabloa/postgres-embedded-node",
   "license": "Apache-2.0",
-  "private": true,
+
   "devDependencies": {
     "@types/app-root-path": "^1.2.4",
     "@types/chai": "^4.3.0",
